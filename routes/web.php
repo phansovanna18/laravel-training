@@ -19,16 +19,18 @@ use App\Http\Controllers\PagesController;
 //});
 
 Route::get('/', [PagesController::class, 'index']);
+Route::get('/about', [PagesController::class, 'about']);
+Route::get('/services', [PagesController::class, 'services']);
 
-Route::get('/hello', function () {
-    return 'Hello World';
-});
-
-Route::get('/about', function() {
-    return view('pages.about');
-});
-
-//Dynamic Routes
-Route::get('/users/{id}', function($id) {
-    return 'This is users '.$id;
-});
+//Route::get('/hello', function () {
+//    return 'Hello World';
+//});
+//
+//Route::get('/about', function() {
+//    return view('pages.about');
+//});
+//
+////Dynamic Routes
+//Route::get('/users/{id}', function($id) {
+//    return 'This is users '.$id;
+//});

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Route::get('/', [PagesController::class, 'index']);
 
 Route::get('/hello', function () {
     return 'Hello World';
@@ -26,6 +29,6 @@ Route::get('/about', function() {
 });
 
 //Dynamic Routes
-Route::get('/about', function() {
-    return view('pages.about');
+Route::get('/users/{id}', function($id) {
+    return 'This is users '.$id;
 });

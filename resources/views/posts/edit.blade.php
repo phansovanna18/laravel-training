@@ -3,6 +3,7 @@
 @section('content')
     <h1>Edit Post</h1>
     {!! Form::open(['action' => ['PostsController@update', $post->id], 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+    {!!Form::open(['url' => ['posts', $post->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
     <div class="form-group">
         {{Form::label('title', 'Title')}}
         {{Form::text('title', $post->title, ['class' => 'form-control', 'placeholder' => 'Title'])}}
